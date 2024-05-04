@@ -1,0 +1,7 @@
+# CMake package config file for mylib
+#
+# The following target is imported:
+#
+#  mylib::mylib
+
+@PACKAGE_INIT@

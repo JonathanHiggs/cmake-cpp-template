@@ -1,0 +1,15 @@
+{
+    "name": "mylib",
+    "version": "0.0.1",
+    "dependencies": [
+        "fmt",
+        "spdlog"
+    ],
+    "features": {
+      "tests": {
+        "description": "Packages required to build tests",
+        "dependencies": [ "gtest" ]
+      }
+    }
+  }
+  

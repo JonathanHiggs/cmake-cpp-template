@@ -1,0 +1,184 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 27,
+        "patch": 0
+    },
+    "include": [
+        "cmake/presets/base.json",
+        "cmake/presets/features.json",
+        "cmake/presets/options.json",
+        "cmake/presets/toolchains.json",
+        "cmake/presets/tools.json"
+    ],
+    "configurePresets": [
+        {
+            "name": "workflow.dev",
+            "hidden": true,
+            "inherits": [
+              "tool.vcpkg",
+              "option.disable-ipo",
+              "option.warnings-as-errors",
+              "feature.tests"
+            ]
+          },
+          {
+            "name": "workflow.deploy",
+            "hidden": true,
+            "inherits": [
+              "tool.vcpkg",
+              "option.disable-ipo",
+              "option.warnings-as-errors"
+            ]
+          },
+          {
+            "name": "clang.debug",
+            "inherits": [ "base", "compiler.clang-18", "build.ninja", "variant.debug", "workflow.dev" ]
+          },
+          {
+            "name": "clang.develop",
+            "inherits": [ "base", "compiler.clang-18", "build.ninja", "variant.develop", "workflow.dev" ]
+          },
+          {
+            "name": "clang.release",
+            "inherits": [ "base", "compiler.clang-18", "build.ninja", "variant.release", "workflow.deploy" ]
+          },
+          {
+            "name": "clangcl.debug",
+            "inherits": [ "base", "compiler.clangcl", "build.ninja", "variant.debug", "workflow.dev" ]
+          },
+          {
+            "name": "clangcl.develop",
+            "inherits": [ "base", "compiler.clangcl", "build.ninja", "variant.develop", "workflow.dev" ]
+          },
+          {
+            "name": "clangcl.release",
+            "inherits": [ "base", "compiler.clangcl", "build.ninja", "variant.release", "workflow.deploy" ]
+          },
+          {
+            "name": "gcc.debug",
+            "inherits": [ "base", "compiler.gcc-13", "build.ninja", "variant.debug", "workflow.dev" ]
+          },
+          {
+            "name": "gcc.develop",
+            "inherits": [ "base", "compiler.gcc-13", "build.ninja", "variant.develop", "workflow.dev" ]
+          },
+          {
+            "name": "gcc.release",
+            "inherits": [ "base", "compiler.gcc-13", "build.ninja", "variant.release", "workflow.deploy" ]
+          },
+          {
+            "name": "msvc.debug",
+            "inherits": [ "base", "compiler.msvc-14-39", "build.ninja", "variant.debug", "workflow.dev" ]
+          },
+          {
+            "name": "msvc.develop",
+            "inherits": [ "base", "compiler.msvc-14-39", "build.ninja", "variant.develop", "workflow.dev" ]
+          },
+          {
+            "name": "msvc.release",
+            "inherits": [ "base", "compiler.msvc-14-39", "build.ninja", "variant.release", "workflow.deploy" ]
+          }
+    ],
+    "buildPresets": [
+        {
+          "name": "clang.debug",
+          "configurePreset": "clang.debug"
+        },
+        {
+          "name": "clang.develop",
+          "configurePreset": "clang.develop"
+        },
+        {
+          "name": "clang.release",
+          "configurePreset": "clang.release"
+        },
+        {
+          "name": "clangcl.debug",
+          "configurePreset": "clangcl.debug"
+        },
+        {
+          "name": "clangcl.develop",
+          "configurePreset": "clangcl.develop"
+        },
+        {
+          "name": "clangcl.release",
+          "configurePreset": "clangcl.release"
+        },
+        {
+          "name": "gcc.debug",
+          "configurePreset": "gcc.debug"
+        },
+        {
+          "name": "gcc.develop",
+          "configurePreset": "gcc.develop"
+        },
+        {
+          "name": "gcc.release",
+          "configurePreset": "gcc.release"
+        },
+        {
+          "name": "msvc.debug",
+          "configurePreset": "msvc.debug"
+        },
+        {
+          "name": "msvc.develop",
+          "configurePreset": "msvc.develop"
+        },
+        {
+          "name": "msvc.release",
+          "configurePreset": "msvc.release"
+        }
+    ],
+    "testPresets": [
+        {
+          "name": "clang.debug",
+          "configurePreset": "clang.debug"
+        },
+        {
+          "name": "clang.develop",
+          "configurePreset": "clang.develop"
+        },
+        {
+          "name": "clang.release",
+          "configurePreset": "clang.release"
+        },
+        {
+          "name": "clangcl.debug",
+          "configurePreset": "clangcl.debug"
+        },
+        {
+          "name": "clangcl.develop",
+          "configurePreset": "clangcl.develop"
+        },
+        {
+          "name": "clangcl.release",
+          "configurePreset": "clangcl.release"
+        },
+        {
+          "name": "gcc.debug",
+          "configurePreset": "gcc.debug"
+        },
+        {
+          "name": "gcc.develop",
+          "configurePreset": "gcc.develop"
+        },
+        {
+          "name": "gcc.release",
+          "configurePreset": "gcc.release"
+        },
+        {
+          "name": "msvc.debug",
+          "configurePreset": "msvc.debug"
+        },
+        {
+          "name": "msvc.develop",
+          "configurePreset": "msvc.develop"
+        },
+        {
+          "name": "msvc.release",
+          "configurePreset": "msvc.release"
+        }
+    ]
+}

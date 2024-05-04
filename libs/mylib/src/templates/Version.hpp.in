@@ -1,0 +1,61 @@
+#pragma once
+
+#include <string_view>
+
+
+namespace mylib::metadata::detail
+{
+
+using namespace std::string_view_literals;
+
+// Metadata strings prefix allow quick searching of a binary for version numbers using:
+// ```bash
+// strings mylib.lib | grep "@MYLIB_METADATA_PREFIX@"
+// ```
+
+constexpr std::string_view ProjectPrefix = "@MYLIB_METADATA_PREFIX@"sv;
+constexpr std::string_view ProjectName = "@MYLIB_METADATA_PREFIX@@PROJECT_NAME@"sv;
+constexpr std::string_view ProjectVersion = "@MYLIB_METADATA_PREFIX@@PROJECT_VERSION@"sv;
+
+// ToDo: git hash
+
+}  // namespace mylib::metadata::detail
+
+
+namespace mylib::metadata
+{
+
+/**
+ * @detail Returns the project name
+ */
+[[nodiscard]] constexpr std::string_view ProjectName()
+{
+    return detail::ProjectName.substr(detail::ProjectPrefix.size());
+}
+
+/**
+ * @detail Returns the project version string
+ */
+[[nodiscard]] constexpr std::string_view ProjectVersion()
+{
+    return detail::ProjectName.substr(detail::ProjectPrefix.size());
+}
+
+/**
+ * @detail Project major version
+ */
+constexpr size_t ProjectVersionMajor = @PROJECT_VERSION_MAJOR@
+
+/**
+ * @detail Project minor version
+ */
+constexpr size_t ProjectVersionMinor = @PROJECT_VERSION_MINOR@
+
+/**
+ * @detail Project patch version
+ */
+constexpr size_t ProjectVersionPatch = @PROJECT_VERSION_PATCH@
+
+// ToDo: git hash
+
+}  // namespace mylib::metadata

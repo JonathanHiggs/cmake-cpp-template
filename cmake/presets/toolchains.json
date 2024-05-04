@@ -1,0 +1,134 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 27,
+        "patch": 0
+    },
+    "include": [
+        "base.json"
+    ],
+    "configurePresets": [
+        {
+          "name": "compiler.clang-18",
+          "description": "Configures the Clang compiler",
+          "hidden": true,
+          "inherits": [ "requires.linux" ],
+          "architecture": {
+            "value": "x64",
+            "strategy": "external"
+          },
+          "cacheVariables": {
+            "CMAKE_C_COMPILER": "clang",
+            "CMAKE_CXX_COMPILER": "clang"
+          },
+          "vendor": {
+            "microsoft.com/VisualStudioSettings/CMake/1.0": {
+              "hostOS": "Linux"
+            },
+            "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
+              "copySourcesOptions": {
+                "exclusionList": [
+                  ".git",
+                  ".vs",
+                  ".vscode",
+                  "build",
+                  "out"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "compiler.clangcl",
+          "description": "Configures the Clang-CL compiler",
+          "hidden": true,
+          "inherits": [ "requires.windows" ],
+          "architecture": {
+            "value": "x64",
+            "strategy": "external"
+          },
+          "cacheVariables": {
+            "CMAKE_C_COMPILER": "clang-cl.exe",
+            "CMAKE_CXX_COMPILER": "clang-cl.exe"
+          },
+          "vendor": {
+            "microsoft.com/VisualStudioSettings/CMake/1.0": {
+              "hostOS": "Windows",
+              "intelliSenseMode": "windows-clang-x64"
+            }
+          }
+        },
+        {
+          "name": "compiler.gcc-13",
+          "description": "Configures the GCC compiler",
+          "hidden": true,
+          "inherits": [ "requires.linux" ],
+          "architecture": {
+            "value": "x64",
+            "strategy": "external"
+          },
+          "cacheVariables": {
+            "CMAKE_C_COMPILER": "gcc-13",
+            "CMAKE_CXX_COMPILER": "g++-13"
+          },
+          "vendor": {
+            "microsoft.com/VisualStudioSettings/CMake/1.0": {
+              "hostOS": "Linux",
+              "intelliSenseMode": "linux-gcc-x64"
+            },
+            "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": {
+              "copySourcesOptions": {
+                "exclusionList": [
+                  ".git",
+                  ".vs",
+                  ".vscode",
+                  "build",
+                  "out"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "compiler.msvc-14-39",
+          "description": "Configures the MSVC compiler",
+          "hidden": true,
+          "inherits": [ "requires.windows" ],
+          "architecture": {
+            "value": "x64",
+            "strategy": "external"
+          },
+          "toolset": {
+            "value": "host=x64,version=14.39",
+            "strategy": "external"
+          },
+          "vendor": {
+            "microsoft.com/VisualStudioSettings/CMake/1.0": {
+              "hostOS": "Windows",
+              "intelliSenseMode": "windows-msvc-x64"
+            }
+          }
+        },
+        {
+          "name": "compiler.msvc-14-40",
+          "description": "Configures the MSVC compiler",
+          "hidden": true,
+          "inherits": [ "requires.windows" ],
+          "architecture": {
+            "value": "x64",
+            "strategy": "external"
+          },
+          "toolset": {
+            "value": "host=x64,version=14.40",
+            "strategy": "external"
+          },
+          "vendor": {
+            "microsoft.com/VisualStudioSettings/CMake/1.0": {
+              "hostOS": "Windows",
+              "intelliSenseMode": "windows-msvc-x64"
+            }
+          }
+        }
+    ]
+}
