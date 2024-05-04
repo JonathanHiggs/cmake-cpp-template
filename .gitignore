@@ -438,6 +438,4 @@ FodyWeavers.xsd
 ## Project Files
 apps/*/run/*
 out/
-renderdoc/
 temp/
-StructLayoutSettings.json

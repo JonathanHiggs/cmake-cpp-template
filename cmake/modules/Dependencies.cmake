@@ -3,9 +3,9 @@ message(TRACE "mylib::Dependencies")
 
 
 find_package(fmt            CONFIG REQUIRED)
-find_package(spdlog::spdlog CONFIG REQUIRED)
+find_package(spdlog         CONFIG REQUIRED)
 
 
-if(QPL_BUILD_TESTS)
+if(MYLIB_BUILD_TESTS)
     find_package(GTest      CONFIG REQUIRED)
 endif()

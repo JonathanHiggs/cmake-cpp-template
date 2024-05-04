@@ -10,14 +10,14 @@
             "name": "option.enable-ipo",
             "hidden": true,
             "cacheVariables": {
-                "QPL_ENABLE_IPO": "ON"
+                "MYLIB_ENABLE_IPO": "ON"
             }
         },
         {
             "name": "option.warnings-as-errors",
             "hidden": true,
             "cacheVariables": {
-                "QPL_ENABLE_WARNINGS_AS_ERRORS": "ON"
+                "MYLIB_ENABLE_WARNINGS_AS_ERRORS": "ON"
             }
         }
     ]

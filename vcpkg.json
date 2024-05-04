@@ -6,6 +6,14 @@
         "spdlog"
     ],
     "features": {
+      "apps": {
+        "description": "Packages required to build apps",
+        "dependencies": [ ]
+      },
+      "examples": {
+        "description": "Packages required to build examples",
+        "dependencies": [ ]
+      },
       "tests": {
         "description": "Packages required to build tests",
         "dependencies": [ "gtest" ]

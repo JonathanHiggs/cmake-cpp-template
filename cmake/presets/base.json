@@ -14,7 +14,7 @@
             "installDir": "${sourceDir}/out/install/${presetName}",
             "warnings": {
                 "dev": true,
-                "description": true
+                "deprecated": true
             }
         },
         {

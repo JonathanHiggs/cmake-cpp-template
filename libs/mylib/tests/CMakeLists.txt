@@ -6,6 +6,8 @@ file(
         "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp"
 )
 
+target_sources(mylib_tests PRIVATE ${source_files})
+
 target_include_directories(
     mylib_tests
     PRIVATE

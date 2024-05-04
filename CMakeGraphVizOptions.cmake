@@ -1,14 +1,14 @@
 ## Settings used to generate graphviz dependency diagrams
 ##
 ## Run:
-##     cmake . --preset <preset> --graphviz=graphs/qpl.dot
+##     cmake . --preset <preset> --graphviz=docs/graphs/mylib.dot
 ##
 ## Then:
-##     dot -Tpng graphs/qpl.dot -o graphs/qpl.png
-##     dot -Tsvg graphs/qpl.dot -o graphs/qpl.svg
+##     dot -Tpng docs/graphs/mylib.dot -o docs/graphs/mylib.png
+##     dot -Tsvg docs/graphs/mylib.dot -o docs/graphs/mylib.svg
 
 # Name of the graph
-set(GRAPHVIZ_GRAPH_NAME "qpl")
+set(GRAPHVIZ_GRAPH_NAME "mylib")
 
 # Header written at the top of the file
 # set(GRAPHVIZ_GRAPH_HEADER "node [ fontsize = \"12\" ];")
@@ -46,8 +46,8 @@ set(GRAPHVIZ_EXTERNAL_LIBS FALSE)
 # Regular expression of targets to exclude
 set(GRAPHVIZ_IGNORE_TARGETS ".*tests.*")
 
-# Generate graphs per-target `qpl.dot.<target>` (default: TRUE)
+# Generate graphs per-target `mylib.dot.<target>` (default: TRUE)
 set(GRAPHVIZ_GENERATE_PER_TARGET FALSE)
 
-# Generate graphs per-dependence `qpl.dot.<dependency>` (default: TRUE)
+# Generate graphs per-dependence `mylib.dot.<dependency>` (default: TRUE)
 set(GRAPHVIZ_GENERATE_DEPENDERS FALSE)

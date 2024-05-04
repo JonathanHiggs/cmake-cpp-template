@@ -38,6 +38,14 @@ endif()
 
 add_subdirectory(libs)
 
+if(MYLIB_BUILD_APPS)
+    add_subdirectory(apps)
+endif()
+
+if(MYLIB_BUILD_EXAMPLES)
+    add_subdirectory(examples)
+endif()
+
 
 ## Install
 

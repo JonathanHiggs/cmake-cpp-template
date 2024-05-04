@@ -26,7 +26,7 @@ file(
         "${CMAKE_CURRENT_BINARY_DIR}/include/*.hpp"
 )
 
-target_sources(mylib PRIVATE ${SOURCE_FILES})
+target_sources(mylib PRIVATE ${source_files})
 
 
 # Setup target
@@ -38,20 +38,22 @@ target_include_directories(
         $<INSTALL_INTERFACE:include>
 )
 
-target_link_options(
-    mylib
-    PRIVATE
-        $<$<PLATFORM_ID:Linux>:-static-libgcc>
-        $<$<PLATFORM_ID:Linux>:-static-libstdc++> 
-)
+# target_link_options(
+#     mylib
+#     PRIVATE
+#         $<$<PLATFORM_ID:Linux>:-static-libgcc>
+#         $<$<PLATFORM_ID:Linux>:-static-libstdc++> 
+# )
 
 target_link_libraries(
     mylib
-    PRIVATE
-        mylib::definitions
-        mylib::options
-        mylib::warnings
     PUBLIC
+        mylib::base_target
         fmt::fmt
         spdlog::spdlog
 )
+
+
+## Install
+
+# ToDo
