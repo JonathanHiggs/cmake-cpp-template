@@ -1,0 +1,7 @@
+#pragma once
+
+#if !defined(@_library_name@_STATIC_DEFINE)
+    #include <@_library_name@/@_library_name@_export_shared.hpp>
+#else
+    #include <@_library_name@/@_library_name@_export_static.hpp>
+#endif

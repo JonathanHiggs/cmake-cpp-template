@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.25)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules")
 
+
+## Setup toolchain
+
 include(VcpkgSetup)
 
 
@@ -25,11 +28,7 @@ include(DetectPlatform)
 include(ProjectOptions)
 include(InterfaceTargets)
 include(Dependencies)
-
-if(MYLIB_BUILD_TESTS)
-    include(GoogleTest)
-    enable_testing()
-endif()
+include(TestingSetup)
 
 # ToDo: Sanatizers, Coverage, GitInfo
 
@@ -42,6 +41,8 @@ if(MYLIB_BUILD_APPS)
     add_subdirectory(apps)
 endif()
 
+# ToDo: docs
+
 if(MYLIB_BUILD_EXAMPLES)
     add_subdirectory(examples)
 endif()
@@ -49,4 +50,4 @@ endif()
 
 ## Install
 
-# ToDo: install
+include(InstallSetup)

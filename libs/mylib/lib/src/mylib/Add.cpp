@@ -1,10 +1,10 @@
-#include "mylib/mylib.hpp"
+#include "mylib/Add.hpp"
 
 
 namespace mylib
 {
 
-int add(int a, int b)
+int Add(int a, int b) noexcept
 {
     return a + b;
 }

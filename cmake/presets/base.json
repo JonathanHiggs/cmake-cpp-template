@@ -1,78 +1,78 @@
 {
-    "version": 6,
-    "cmakeMinimumRequired": {
-        "major": 3,
-        "minor": 27,
-        "patch": 0
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 27,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "base",
+      "description": "Base configuration options",
+      "hidden": true,
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "installDir": "${sourceDir}/out/install/${presetName}",
+      "warnings": {
+        "dev": true,
+        "deprecated": true
+      }
     },
-    "configurePresets": [
-        {
-            "name": "base",
-            "description": "Base configuration options",
-            "hidden": true,
-            "binaryDir": "${sourceDir}/out/build/${presetName}",
-            "installDir": "${sourceDir}/out/install/${presetName}",
-            "warnings": {
-                "dev": true,
-                "deprecated": true
-            }
-        },
-        {
-          "name": "requires.linux",
-          "description": "Adds a condition that the host system is Linux",
-          "hidden": true,
-          "condition": {
-            "type": "equals",
-            "lhs": "${hostSystemName}",
-            "rhs": "Linux"
-          }
-        },
-        {
-          "name": "requires.windows",
-          "description": "Adds a condition that the host system is Windows",
-          "hidden": true,
-          "condition": {
-            "type": "equals",
-            "lhs": "${hostSystemName}",
-            "rhs": "Windows"
-          }
-        },
-        {
-          "name": "build.make",
-          "description": "Configures make generator",
-          "hidden": true,
-          "inherits": [ "requires.linux" ],
-          "generator": "Unix Makefiles"
-        },
-        {
-          "name": "build.ninja",
-          "description": "Configures ninja generator",
-          "hidden": true,
-          "generator": "Ninja"
-        },
-        {
-          "name": "variant.debug",
-          "description": "Sets the build type to Debug",
-          "hidden": true,
-          "cacheVariables": {
-            "CMAKE_BUILD_TYPE": "Debug"
-          }
-        },
-        {
-          "name": "variant.develop",
-          "description": "Sets the build type to Release with debug symbols",
-          "hidden": true,
-          "cacheVariables": {
-            "CMAKE_BUILD_TYPE": "RelWithDebInfo"
-          }
-        },
-        {
-          "name": "variant.release",
-          "description": "Sets the build type to Release",
-          "hidden": true,
-          "cacheVariables": {
-            "CMAKE_BUILD_TYPE": "Release"
-          }
-        }
-    ]
+    {
+      "name": "requires.linux",
+      "description": "Adds a condition that the host system is Linux",
+      "hidden": true,
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Linux"
+      }
+    },
+    {
+      "name": "requires.windows",
+      "description": "Adds a condition that the host system is Windows",
+      "hidden": true,
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      }
+    },
+    {
+      "name": "build.make",
+      "description": "Configures make generator",
+      "hidden": true,
+      "inherits": [ "requires.linux" ],
+      "generator": "Unix Makefiles"
+    },
+    {
+      "name": "build.ninja",
+      "description": "Configures ninja generator",
+      "hidden": true,
+      "generator": "Ninja"
+    },
+    {
+      "name": "variant.debug",
+      "description": "Sets the build type to Debug",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "variant.develop",
+      "description": "Sets the build type to Release with debug symbols",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      }
+    },
+    {
+      "name": "variant.release",
+      "description": "Sets the build type to Release",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    }
+  ]
 }

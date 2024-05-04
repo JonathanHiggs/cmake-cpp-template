@@ -1,31 +1,38 @@
 {
-    "version": 6,
-    "cmakeMinimumRequired": {
-        "major": 3,
-        "minor": 27,
-        "patch": 0
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 27,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "feature.apps",
+      "hidden": true,
+      "cacheVariables": {
+        "MYLIB_BUILD_APPS": "ON"
+      }
     },
-    "configurePresets": [
-        {
-            "name": "feature.apps",
-            "hidden": true,
-            "cacheVariables": {
-                "MYLIB_BUILD_APPS": "ON"
-            }
-        },
-        {
-            "name": "feature.examples",
-            "hidden": true,
-            "cacheVariables": {
-                "MYLIB_BUILD_EXAMPLES": "ON"
-            }
-        },
-        {
-            "name": "feature.tests",
-            "hidden": true,
-            "cacheVariables": {
-                "MYLIB_BUILD_TESTS": "ON"
-            }
-        }
-    ]
+    {
+      "name": "feature.docs",
+      "hidden": true,
+      "cacheVariables": {
+        "MYLIB_BUILD_DOCS": "ON"
+      }
+    },
+    {
+      "name": "feature.examples",
+      "hidden": true,
+      "cacheVariables": {
+        "MYLIB_BUILD_EXAMPLES": "ON"
+      }
+    },
+    {
+      "name": "feature.tests",
+      "hidden": true,
+      "cacheVariables": {
+        "MYLIB_BUILD_TESTS": "ON"
+      }
+    }
+  ]
 }

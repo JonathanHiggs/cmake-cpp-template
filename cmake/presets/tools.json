@@ -1,43 +1,46 @@
 {
-    "version": 6,
-    "cmakeMinimumRequired": {
-        "major": 3,
-        "minor": 27,
-        "patch": 0
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 27,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "tool.asan",
+      "hidden": true,
+      "cacheVariables": {
+        "MYLIB_ENABLE_ASAN": "ON"
+      }
     },
-    "configurePresets": [
-        {
-            "name": "tool.asan",
-            "hidden": true,
-            "cacheVariables": {
-              "MYLIB_ENABLE_ASAN": "ON"
-            }
-        },
-        {
-            "name": "tool.clang-tidy",
-            "hidden": true,
-            "cacheVariables": {
-              "MYLIB_ENABLE_CLANG_TIDY": "ON"
-            }
-        },
-        {
-            "name": "tool.coverage",
-            "hidden": true,
-            "cacheVariables": {
-              "MYLIB_ENABLE_COVERAGE": "ON"
-            }
-        },
-        {
-            "name": "tool.vcpkg",
-            "hidden": true,
-            "toolchainFile": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
-        },
-        {
-            "name": "tool.ubsan",
-            "hidden": true,
-            "cacheVariables": {
-              "MYLIB_ENABLE_UBSAN": "ON"
-            }
-        }
-    ]
+    {
+      "name": "tool.clang-tidy",
+      "hidden": true,
+      "cacheVariables": {
+        "MYLIB_ENABLE_CLANG_TIDY": "ON"
+      }
+    },
+    {
+      "name": "tool.coverage",
+      "hidden": true,
+      "cacheVariables": {
+        "MYLIB_ENABLE_COVERAGE": "ON"
+      }
+    },
+    {
+      "name": "tool.vcpkg",
+      "hidden": true,
+      "toolchainFile": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+      "cacheVariables": {
+        "MYLIB_ENABLE_VCPKG": "ON"
+      }
+    },
+    {
+      "name": "tool.ubsan",
+      "hidden": true,
+      "cacheVariables": {
+        "MYLIB_ENABLE_UBSAN": "ON"
+      }
+    }
+  ]
 }

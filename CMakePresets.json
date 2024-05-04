@@ -7,9 +7,9 @@
     },
     "include": [
         "cmake/presets/base.json",
+        "cmake/presets/compilers.json",
         "cmake/presets/features.json",
         "cmake/presets/options.json",
-        "cmake/presets/toolchains.json",
         "cmake/presets/tools.json"
     ],
     "configurePresets": [

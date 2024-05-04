@@ -1,4 +1,4 @@
-#include "mylib/mylib.hpp"
+#include "mylib/Add.hpp"
 
 #include <gtest/gtest.h>
 
@@ -6,14 +6,14 @@
 namespace mylib::tests
 {
 
-TEST(AddTests, AddIsCorrect)
+TEST(AddTests, AddWorks)
 {
     // Arrange
-    auto a = 1;
-    auto b = 2;
+    auto const a = 1;
+    auto const b = 2;
 
     // Act
-    auto result = add(a, b);
+    auto const result = Add(a, b);
 
     // Assert
     EXPECT_EQ(result, 3);
