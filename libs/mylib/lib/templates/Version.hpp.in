@@ -44,17 +44,17 @@ namespace mylib::metadata
 /**
  * @detail Project major version
  */
-constexpr size_t ProjectVersionMajor = @PROJECT_VERSION_MAJOR@
+constexpr size_t ProjectVersionMajor = @PROJECT_VERSION_MAJOR@;
 
 /**
  * @detail Project minor version
  */
-constexpr size_t ProjectVersionMinor = @PROJECT_VERSION_MINOR@
+constexpr size_t ProjectVersionMinor = @PROJECT_VERSION_MINOR@;
 
 /**
  * @detail Project patch version
  */
-constexpr size_t ProjectVersionPatch = @PROJECT_VERSION_PATCH@
+constexpr size_t ProjectVersionPatch = @PROJECT_VERSION_PATCH@;
 
 // ToDo: git hash
 

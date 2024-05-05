@@ -5,6 +5,8 @@ add_library(mylib::mylib ALIAS mylib)
 ##  Generate templates
 
 set(_library_name "mylib")
+set(_library_name_upper "MYLIB")
+
 set(_export_file_name "${_library_name}_export_shared.hpp")
 if(NOT BUILD_SHARED_LIBS)
    set(_export_file_name "${_library_name}_export_static.hpp")
@@ -31,9 +33,10 @@ configure_file(
     @ONLY
 )
 
-unset(MYLIB_METADATA_PREFIX)
-unset(_export_file_name)
 unset(_library_name)
+unset(_library_name_upper)
+unset(_export_file_name)
+unset(MYLIB_METADATA_PREFIX)
 
 
 ## Source files

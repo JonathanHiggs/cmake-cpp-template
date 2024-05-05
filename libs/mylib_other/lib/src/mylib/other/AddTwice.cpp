@@ -11,4 +11,4 @@ int AddTwice(int a, int b) noexcept
     return Add(Add(a, b), b);
 }
 
-} // namespace mylib::other
+}  // namespace mylib::other

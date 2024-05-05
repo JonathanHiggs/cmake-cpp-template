@@ -1,23 +1,22 @@
 {
-    "name": "mylib",
-    "version": "0.0.1",
-    "dependencies": [
-        "fmt",
-        "spdlog"
-    ],
-    "features": {
-      "apps": {
-        "description": "Packages required to build apps",
-        "dependencies": [ ]
-      },
-      "examples": {
-        "description": "Packages required to build examples",
-        "dependencies": [ ]
-      },
-      "tests": {
-        "description": "Packages required to build tests",
-        "dependencies": [ "gtest" ]
-      }
+  "name": "mylib",
+  "version": "0.0.1",
+  "dependencies": [
+    "fmt",
+    "spdlog"
+  ],
+  "features": {
+    "apps": {
+      "description": "Packages required to build apps",
+      "dependencies": []
+    },
+    "examples": {
+      "description": "Packages required to build examples",
+      "dependencies": []
+    },
+    "tests": {
+      "description": "Packages required to build tests",
+      "dependencies": [ "gtest" ]
     }
   }
-  
+}

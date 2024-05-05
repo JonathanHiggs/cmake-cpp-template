@@ -1,186 +1,186 @@
 {
-    "version": 6,
-    "cmakeMinimumRequired": {
-        "major": 3,
-        "minor": 27,
-        "patch": 0
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 27,
+    "patch": 0
+  },
+  "include": [
+    "cmake/presets/base.json",
+    "cmake/presets/compilers.json",
+    "cmake/presets/features.json",
+    "cmake/presets/options.json",
+    "cmake/presets/tools.json"
+  ],
+  "configurePresets": [
+    {
+      "name": "dev.standard",
+      "hidden": true,
+      "inherits": [
+        "tool.vcpkg",
+        "option.enable-ipo",
+        "option.warnings-as-errors",
+        "feature.apps",
+        "feature.tests"
+      ]
     },
-    "include": [
-        "cmake/presets/base.json",
-        "cmake/presets/compilers.json",
-        "cmake/presets/features.json",
-        "cmake/presets/options.json",
-        "cmake/presets/tools.json"
-    ],
-    "configurePresets": [
-        {
-            "name": "dev.standard",
-            "hidden": true,
-            "inherits": [
-              "tool.vcpkg",
-              "option.enable-ipo",
-              "option.warnings-as-errors",
-              "feature.apps",
-              "feature.tests"
-            ]
-          },
-          {
-            "name": "deploy.standard",
-            "hidden": true,
-            "inherits": [
-              "tool.vcpkg",
-              "option.enable-ipo",
-              "option.warnings-as-errors",
-              "feature.examples"
-            ]
-          },
-          {
-            "name": "clang.debug",
-            "inherits": [ "base", "compiler.clang-18", "build.ninja", "variant.debug", "dev.standard" ]
-          },
-          {
-            "name": "clang.develop",
-            "inherits": [ "base", "compiler.clang-18", "build.ninja", "variant.develop", "dev.standard" ]
-          },
-          {
-            "name": "clang.release",
-            "inherits": [ "base", "compiler.clang-18", "build.ninja", "variant.release", "deploy.standard" ]
-          },
-          {
-            "name": "clangcl.debug",
-            "inherits": [ "base", "compiler.clangcl", "build.ninja", "variant.debug", "dev.standard" ]
-          },
-          {
-            "name": "clangcl.develop",
-            "inherits": [ "base", "compiler.clangcl", "build.ninja", "variant.develop", "dev.standard" ]
-          },
-          {
-            "name": "clangcl.release",
-            "inherits": [ "base", "compiler.clangcl", "build.ninja", "variant.release", "deploy.standard" ]
-          },
-          {
-            "name": "gcc.debug",
-            "inherits": [ "base", "compiler.gcc-13", "build.ninja", "variant.debug", "dev.standard" ]
-          },
-          {
-            "name": "gcc.develop",
-            "inherits": [ "base", "compiler.gcc-13", "build.ninja", "variant.develop", "dev.standard" ]
-          },
-          {
-            "name": "gcc.release",
-            "inherits": [ "base", "compiler.gcc-13", "build.ninja", "variant.release", "deploy.standard" ]
-          },
-          {
-            "name": "msvc.debug",
-            "inherits": [ "base", "compiler.msvc-14-39", "build.ninja", "variant.debug", "dev.standard" ]
-          },
-          {
-            "name": "msvc.develop",
-            "inherits": [ "base", "compiler.msvc-14-39", "build.ninja", "variant.develop", "dev.standard" ]
-          },
-          {
-            "name": "msvc.release",
-            "inherits": [ "base", "compiler.msvc-14-39", "build.ninja", "variant.release", "deploy.standard" ]
-          }
-    ],
-    "buildPresets": [
-        {
-          "name": "clang.debug",
-          "configurePreset": "clang.debug"
-        },
-        {
-          "name": "clang.develop",
-          "configurePreset": "clang.develop"
-        },
-        {
-          "name": "clang.release",
-          "configurePreset": "clang.release"
-        },
-        {
-          "name": "clangcl.debug",
-          "configurePreset": "clangcl.debug"
-        },
-        {
-          "name": "clangcl.develop",
-          "configurePreset": "clangcl.develop"
-        },
-        {
-          "name": "clangcl.release",
-          "configurePreset": "clangcl.release"
-        },
-        {
-          "name": "gcc.debug",
-          "configurePreset": "gcc.debug"
-        },
-        {
-          "name": "gcc.develop",
-          "configurePreset": "gcc.develop"
-        },
-        {
-          "name": "gcc.release",
-          "configurePreset": "gcc.release"
-        },
-        {
-          "name": "msvc.debug",
-          "configurePreset": "msvc.debug"
-        },
-        {
-          "name": "msvc.develop",
-          "configurePreset": "msvc.develop"
-        },
-        {
-          "name": "msvc.release",
-          "configurePreset": "msvc.release"
-        }
-    ],
-    "testPresets": [
-        {
-          "name": "clang.debug",
-          "configurePreset": "clang.debug"
-        },
-        {
-          "name": "clang.develop",
-          "configurePreset": "clang.develop"
-        },
-        {
-          "name": "clang.release",
-          "configurePreset": "clang.release"
-        },
-        {
-          "name": "clangcl.debug",
-          "configurePreset": "clangcl.debug"
-        },
-        {
-          "name": "clangcl.develop",
-          "configurePreset": "clangcl.develop"
-        },
-        {
-          "name": "clangcl.release",
-          "configurePreset": "clangcl.release"
-        },
-        {
-          "name": "gcc.debug",
-          "configurePreset": "gcc.debug"
-        },
-        {
-          "name": "gcc.develop",
-          "configurePreset": "gcc.develop"
-        },
-        {
-          "name": "gcc.release",
-          "configurePreset": "gcc.release"
-        },
-        {
-          "name": "msvc.debug",
-          "configurePreset": "msvc.debug"
-        },
-        {
-          "name": "msvc.develop",
-          "configurePreset": "msvc.develop"
-        },
-        {
-          "name": "msvc.release",
-          "configurePreset": "msvc.release"
-        }
-    ]
+    {
+      "name": "deploy.standard",
+      "hidden": true,
+      "inherits": [
+        "tool.vcpkg",
+        "option.enable-ipo",
+        "option.warnings-as-errors",
+        "feature.examples"
+      ]
+    },
+    {
+      "name": "clang.debug",
+      "inherits": [ "base", "compiler.clang-18", "build.ninja", "variant.debug", "dev.standard" ]
+    },
+    {
+      "name": "clang.develop",
+      "inherits": [ "base", "compiler.clang-18", "build.ninja", "variant.develop", "dev.standard" ]
+    },
+    {
+      "name": "clang.release",
+      "inherits": [ "base", "compiler.clang-18", "build.ninja", "variant.release", "deploy.standard" ]
+    },
+    {
+      "name": "clangcl.debug",
+      "inherits": [ "base", "compiler.clangcl", "build.ninja", "variant.debug", "dev.standard" ]
+    },
+    {
+      "name": "clangcl.develop",
+      "inherits": [ "base", "compiler.clangcl", "build.ninja", "variant.develop", "dev.standard" ]
+    },
+    {
+      "name": "clangcl.release",
+      "inherits": [ "base", "compiler.clangcl", "build.ninja", "variant.release", "deploy.standard" ]
+    },
+    {
+      "name": "gcc.debug",
+      "inherits": [ "base", "compiler.gcc-13", "build.ninja", "variant.debug", "dev.standard" ]
+    },
+    {
+      "name": "gcc.develop",
+      "inherits": [ "base", "compiler.gcc-13", "build.ninja", "variant.develop", "dev.standard" ]
+    },
+    {
+      "name": "gcc.release",
+      "inherits": [ "base", "compiler.gcc-13", "build.ninja", "variant.release", "deploy.standard" ]
+    },
+    {
+      "name": "msvc.debug",
+      "inherits": [ "base", "compiler.msvc-14-39", "build.ninja", "variant.debug", "dev.standard" ]
+    },
+    {
+      "name": "msvc.develop",
+      "inherits": [ "base", "compiler.msvc-14-39", "build.ninja", "variant.develop", "dev.standard" ]
+    },
+    {
+      "name": "msvc.release",
+      "inherits": [ "base", "compiler.msvc-14-39", "build.ninja", "variant.release", "deploy.standard" ]
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "clang.debug",
+      "configurePreset": "clang.debug"
+    },
+    {
+      "name": "clang.develop",
+      "configurePreset": "clang.develop"
+    },
+    {
+      "name": "clang.release",
+      "configurePreset": "clang.release"
+    },
+    {
+      "name": "clangcl.debug",
+      "configurePreset": "clangcl.debug"
+    },
+    {
+      "name": "clangcl.develop",
+      "configurePreset": "clangcl.develop"
+    },
+    {
+      "name": "clangcl.release",
+      "configurePreset": "clangcl.release"
+    },
+    {
+      "name": "gcc.debug",
+      "configurePreset": "gcc.debug"
+    },
+    {
+      "name": "gcc.develop",
+      "configurePreset": "gcc.develop"
+    },
+    {
+      "name": "gcc.release",
+      "configurePreset": "gcc.release"
+    },
+    {
+      "name": "msvc.debug",
+      "configurePreset": "msvc.debug"
+    },
+    {
+      "name": "msvc.develop",
+      "configurePreset": "msvc.develop"
+    },
+    {
+      "name": "msvc.release",
+      "configurePreset": "msvc.release"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "clang.debug",
+      "configurePreset": "clang.debug"
+    },
+    {
+      "name": "clang.develop",
+      "configurePreset": "clang.develop"
+    },
+    {
+      "name": "clang.release",
+      "configurePreset": "clang.release"
+    },
+    {
+      "name": "clangcl.debug",
+      "configurePreset": "clangcl.debug"
+    },
+    {
+      "name": "clangcl.develop",
+      "configurePreset": "clangcl.develop"
+    },
+    {
+      "name": "clangcl.release",
+      "configurePreset": "clangcl.release"
+    },
+    {
+      "name": "gcc.debug",
+      "configurePreset": "gcc.debug"
+    },
+    {
+      "name": "gcc.develop",
+      "configurePreset": "gcc.develop"
+    },
+    {
+      "name": "gcc.release",
+      "configurePreset": "gcc.release"
+    },
+    {
+      "name": "msvc.debug",
+      "configurePreset": "msvc.debug"
+    },
+    {
+      "name": "msvc.develop",
+      "configurePreset": "msvc.develop"
+    },
+    {
+      "name": "msvc.release",
+      "configurePreset": "msvc.release"
+    }
+  ]
 }

@@ -8,4 +8,4 @@ namespace mylib::other
 
 [[nodiscard]] int MYLIB_EXPORT AddTwice(int a, int b) noexcept;
 
-} // namespace mylib::other
+}  // namespace mylib::other

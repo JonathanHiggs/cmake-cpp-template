@@ -4,7 +4,7 @@
 #include <string>
 
 
-int main(int argv, char** argc)
+int main(int argv, char ** argc)
 {
     if (argv != 3)
     {
