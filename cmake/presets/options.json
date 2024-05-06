@@ -7,10 +7,24 @@
   },
   "configurePresets": [
     {
+      "name": "option.enable-asserts",
+      "hidden": true,
+      "cacheVariables": {
+        "MYLIB_ENABLE_ASSERTS": "ON"
+      }
+    },
+    {
       "name": "option.enable-ipo",
       "hidden": true,
       "cacheVariables": {
         "MYLIB_ENABLE_IPO": "ON"
+      }
+    },
+    {
+      "name": "option.shared-libs",
+      "hidden": true,
+      "cacheVariables": {
+        "MYLIB_ENABLE_SHARED": "ON"
       }
     },
     {

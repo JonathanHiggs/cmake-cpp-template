@@ -19,8 +19,6 @@ target_link_libraries(
     PRIVATE
         mylib::test_base_target
         mylib::mylib
-        GTest::gtest
-        GTest::gtest_main
 )
 
 gtest_discover_tests(mylib_tests DISCOVERY_MODE POST_BUILD)
